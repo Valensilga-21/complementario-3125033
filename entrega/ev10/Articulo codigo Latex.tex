@@ -1,0 +1,148 @@
+\documentclass[twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{authblk} 
+
+\title{Innovaciones en Arquitectura de Software: Un Análisis Comparativo de Patrones de Diseño y Metodologías}
+
+\author[1]{Valentina Silva Garrido}
+\author[2]{Jesús Ariel Gonzalez Bonilla}
+
+\affil[1]{Servicio Nacional de Aprendizaje (SENA), Colombia. Contribución: Análisis comparativo de patrones de diseño en el desarrollo de software.}
+\affil[2]{Servicio Nacional de Aprendizaje (SENA). Instructor y revisor del artículo, quien proporcionó las bases y orientación para la realización de este artículo.}
+
+\renewcommand\Authands{ y } % Para cambiar "and" por "y"
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Este artículo presenta un análisis exhaustivo de las innovaciones en la arquitectura de software, centrándose en la interrelación entre patrones de diseño y metodologías ágiles. A través de una revisión sistemática de 34 artículos relevantes, se identifican las tendencias actuales en el desarrollo de software, destacando la creciente importancia de la arquitectura orientada a servicios (SOA) y los microservicios como enfoques preferidos para la construcción de aplicaciones escalables y flexibles. Además, se examinan metodologías ágiles como Scrum y Extreme Programming (XP), que han demostrado ser efectivas para mejorar la eficiencia y la calidad en el proceso de desarrollo. Los resultados indican que la adopción de patrones de diseño adecuados no solo optimiza la calidad y mantenibilidad del software, sino que también facilita la adaptación a los cambios en los requisitos del cliente. Este estudio también discute las limitaciones de los enfoques actuales y propone recomendaciones para futuras investigaciones, contribuyendo así a una mejor comprensión de cómo las arquitecturas de software pueden evolucionar para satisfacer las demandas cambiantes del entorno tecnológico.
+\end{abstract}
+
+\textbf{Palabras Clave:} Arquitectura de software, patrones de diseño, metodologías ágiles, microservicios, desarrollo de software, calidad del software.
+
+\section{Introducción}
+La arquitectura de software es un componente crítico en el desarrollo de sistemas informáticos complejos, ya que define la estructura y organización de los componentes del software, así como sus interacciones. Sin embargo, a medida que las tecnologías evolucionan, también lo hacen las metodologías y patrones de diseño utilizados por los desarrolladores, lo que genera un entorno en constante cambio. En este contexto, se presenta un problema significativo: la falta de estandarización en la aplicación de patrones de diseño, lo que puede llevar a inconsistencias y dificultades en la implementación de soluciones efectivas. Además, la rápida evolución de los requisitos del mercado exige metodologías ágiles que faciliten la adaptación a los cambios y mejoren la eficiencia del desarrollo.
+
+El objetivo de este artículo es analizar las tendencias actuales en la arquitectura de software, centrándose en la integración de patrones de diseño con metodologías ágiles. Se busca proponer un marco que permita a los desarrolladores seleccionar y aplicar patrones de diseño de manera más efectiva, alineándose con prácticas ágiles que fomenten la colaboración y la flexibilidad.
+
+La justificación de este estudio radica en la creciente complejidad de los sistemas de software y la necesidad de soluciones más eficientes y escalables. A medida que las organizaciones enfrentan desafíos tecnológicos y de mercado, es fundamental contar con un enfoque que no solo mejore la calidad y mantenibilidad del software, sino que también permita una rápida adaptación a los cambios en los requisitos del cliente. Este artículo contribuye a la comprensión de cómo las arquitecturas de software pueden evolucionar para satisfacer estas demandas cambiantes, ofreciendo un marco que integra lo mejor de los patrones de diseño y las metodologías ágiles.
+
+\section{Marco Teórico}
+
+\subsection{Patrones de Diseño}
+\textbf{Definición:} Los patrones de diseño son soluciones reutilizables a problemas comunes que surgen en el desarrollo de software. Se clasifican en tres categorías principales: patrones creacionales, estructurales y de comportamiento.
+
+\subsubsection{Patrones Creacionales}
+Se centran en la creación de objetos y en la forma en que se instancian. Ejemplos incluyen el patrón Singleton, que asegura que una clase tenga una única instancia, y el patrón Factory, que permite la creación de objetos sin especificar la clase exacta.
+
+\subsubsection{Patrones Estructurales}
+Se ocupan de la composición de clases y objetos. Ejemplos son el patrón Adapter, que permite que clases con interfaces incompatibles trabajen juntas, y el patrón Composite, que permite tratar objetos individuales y compuestos de manera uniforme.
+
+\subsubsection{Patrones de Comportamiento}
+Se centran en la interacción y la responsabilidad entre los objetos. Ejemplos incluyen el patrón Observer, que define una relación de dependencia entre objetos, y el patrón Strategy, que permite seleccionar un algoritmo en tiempo de ejecución.
+
+\subsection{Metodologías Ágiles}
+\textbf{Definición:} Las metodologías ágiles son enfoques de desarrollo de software que promueven la flexibilidad, la colaboración y la entrega continua de valor. Se centran en la adaptación a los cambios y en la satisfacción del cliente.
+
+\subsubsection{Scrum}
+Es un marco de trabajo ágil que divide el desarrollo en ciclos cortos llamados sprints. Cada sprint tiene una duración fija y se enfoca en entregar un incremento del producto. Scrum promueve roles específicos (Scrum Master, Product Owner y equipo de desarrollo) y eventos como reuniones diarias y revisiones de sprint.
+
+\subsubsection{Extreme Programming (XP)}
+Es una metodología ágil que enfatiza la calidad del software y la satisfacción del cliente. XP incluye prácticas como la programación en pareja, el desarrollo guiado por pruebas (TDD) y la integración continua, lo que permite una rápida adaptación a los cambios en los requisitos.
+
+\subsection{Arquitectura Orientada a Servicios (SOA)}
+\textbf{Definición:} SOA es un estilo arquitectónico que permite construir aplicaciones como un conjunto de servicios interoperables. Cada servicio es una unidad funcional que puede ser desarrollada, implementada y escalada de manera independiente.
+
+\textbf{Beneficios:} SOA promueve la reutilización de servicios, la escalabilidad y la flexibilidad. Permite a las organizaciones adaptarse rápidamente a los cambios en el mercado y a las necesidades del cliente.
+
+\textbf{Desafíos:} La implementación de SOA puede ser compleja y requiere una buena gobernanza de servicios, así como la gestión de la comunicación entre ellos.
+
+\subsection{Microservicios}
+\textbf{Definición:} Los microservicios son una evolución de SOA, donde las aplicaciones se construyen como un conjunto de servicios pequeños y autónomos que se comunican entre sí a través de APIs.
+
+\textbf{Comparación con Arquitecturas Monolíticas:} A diferencia de las arquitecturas monolíticas, donde todos los componentes están interconectados y se despliegan como una única unidad, los microservicios permiten un desarrollo y despliegue independientes, lo que facilita la escalabilidad y la resiliencia.
+
+\textbf{Desafíos:} Aunque los microservicios ofrecen ventajas significativas, también presentan desafíos en términos de gestión de datos, monitoreo y seguridad.
+
+\subsection{Calidad del Software}
+\textbf{Definición:} La calidad del software se refiere a la capacidad de un sistema para satisfacer los requisitos y expectativas del cliente, así como su capacidad para ser mantenido y evolucionado a lo largo del tiempo.
+
+\textbf{Importancia:} La calidad del software es crucial para el éxito de un proyecto, ya que impacta directamente en la satisfacción del cliente y en los costos de mantenimiento. La implementación de patrones de diseño y metodologías ágiles puede contribuir a mejorar la calidad del software al facilitar la detección y corrección de errores en etapas tempranas del desarrollo.
+
+\textbf{Prácticas de Aseguramiento de Calidad:} Incluyen la revisión de código, las pruebas automatizadas y la integración continua, que ayudan a garantizar que el software cumpla con los estándares de calidad establecidos.
+
+\subsection{Metodología}
+Para llevar a cabo este estudio, se utilizó un enfoque de investigación cualitativa y cuantitativa, aplicando principios de metodologías ágiles como Scrum y Extreme Programming (XP) para la recolección y análisis de datos. Se realizó una revisión sistemática de la literatura, donde se seleccionaron 34 artículos relevantes publicados en revistas académicas y conferencias de renombre en el ámbito de la arquitectura de software y metodologías ágiles.
+
+El proceso de revisión se llevó a cabo en varias etapas:
+
+\textbf{Definición de Criterios de Inclusión y Exclusión:} Se establecieron criterios claros para la selección de artículos, priorizando aquellos que abordaban la interrelación entre patrones de diseño y metodologías ágiles, así como estudios que presentaban casos de uso prácticos.
+
+\section{Búsqueda de Literatura}
+Se utilizaron bases de datos académicas como Google Scholar para identificar artículos relevantes. Se emplearon palabras clave como "patrones de diseño", "metodologías ágiles", "arquitectura de software", "microservicios" y "calidad del software".
+
+\section{Análisis de Datos}
+Los artículos seleccionados fueron analizados en términos de sus contribuciones a la comprensión de la arquitectura de software y su relación con las metodologías ágiles. Se extrajeron datos sobre las tendencias actuales, los patrones de diseño más utilizados y las metodologías ágiles adoptadas en la industria.
+
+\section{Visualización de Resultados}
+Se emplearon herramientas como Google Colab para la visualización de datos y gráficos, facilitando la comparación de diferentes patrones de diseño y metodologías. Se crearon gráficos que ilustran la adopción de metodologías ágiles y un comparativo de la diferencia y uso de las mismas en proyectos de software.
+
+\section{Resultados}
+Los hallazgos se presentan en forma de gráficos y tablas que ilustran la comparación de diferentes patrones de diseño. Se incluyeron datos sobre la adopción de metodologías ágiles y un comparativo del conocimiento y uso de las mismas en proyectos de software.
+
+\begin{figure}[h] % 'h' indica que la figura debe colocarse aquí
+    \centering % Centra la imagen
+    \includegraphics[width=0.5\textwidth]{1.png} % Cambia '1.png' por el nombre de tu imagen
+    \caption{Descripción de la imagen.} % Título de la figura
+    \label{fig:mi_imagen} % Etiqueta para referenciar la figura
+\end{figure}
+
+La gráfica compara cinco patrones de diseño de software (Template Method, MVC, MVP, Front Controller y MVVM) evaluándolos en nueve métricas. Los resultados muestran que MVC, MVP, Front Controller y MVVM sobresalen en mantenibilidad, acoplamiento bajo, compatibilidad con programación modular y facilidad de testing, haciéndolos más flexibles y adaptables. Template Method, aunque válido, es menos versátil. Todos los patrones demuestran una buena escalabilidad y compatibilidad con múltiples paradigmas y arquitecturas multicapa. La elección del patrón ideal dependerá del contexto del proyecto, las habilidades del equipo y el compromiso con una arquitectura coherente.
+
+\begin{figure}[h] % 'h' indica que la figura debe colocarse aquí
+    \centering % Centra la imagen
+    \includegraphics[width=0.5\textwidth]{1234.png} % Cambia '1.png' por el nombre de tu imagen
+    \caption{Descripción de la imagen.} % Título de la figura
+    \label{fig:mi_imagen} % Etiqueta para referenciar la figura
+\end{figure}
+
+En la gráfica se presenta un comparativo sobre el conocimiento y uso de diferentes metodologías de gestión de proyectos: Tradicional (Cascada), SCRUM, XP, KANBAN y Lean Toyota. Podemos observar que la metodología Tradicional (Cascada) es la más conocida y utilizada actualmente. Sin embargo, es interesante notar que las metodologías ágiles como SCRUM y XP, aunque son menos utilizadas actualmente, son bastante conocidas. KANBAN y Lean Toyota presentan un nivel de conocimiento intermedio, con una menor proporción de usuarios actuales.
+
+Los datos también indican que las organizaciones que han adoptado metodologías ágiles reportan una mejora significativa en la satisfacción del cliente y en la calidad del software, así como una reducción en el tiempo de entrega de los proyectos.
+
+\section{Discusión}
+Los resultados obtenidos en este estudio son consistentes con investigaciones previas que destacan la importancia de la integración de patrones de diseño con metodologías ágiles para mejorar la calidad y eficiencia del desarrollo de software. La adopción de patrones de diseño adecuados no solo optimiza la calidad y mantenibilidad del software, sino que también facilita la adaptación a los cambios en los requisitos del cliente, un aspecto crítico en el entorno tecnológico actual.
+
+Sin embargo, se identificaron limitaciones en los enfoques actuales, como la resistencia al cambio en las organizaciones y la falta de capacitación en nuevas tecnologías. Muchas empresas aún dependen de metodologías tradicionales, lo que puede limitar su capacidad para adaptarse a un mercado en constante evolución.
+
+Además, se observó que, aunque las metodologías ágiles están ganando popularidad, su implementación efectiva requiere un cambio cultural dentro de las organizaciones. La colaboración y la comunicación son fundamentales para el éxito de estas metodologías, y muchas veces, las estructuras jerárquicas tradicionales pueden obstaculizar este proceso.
+
+Se sugiere que las organizaciones inviertan en la formación de sus equipos en prácticas ágiles y en la adopción de patrones de diseño que se alineen con sus objetivos estratégicos. La automatización en la detección de patrones de diseño y la integración de herramientas de gestión de proyectos ágiles pueden ser áreas clave para futuras investigaciones.
+
+\section{Conclusiones}
+El estudio concluye que la integración de patrones de diseño con metodologías ágiles puede ser un catalizador clave para mejorar la calidad y eficiencia del desarrollo de software. Los hallazgos indican que la adopción de patrones de diseño adecuados no solo optimiza la calidad y mantenibilidad del software, sino que también proporciona a las organizaciones la flexibilidad necesaria para adaptarse a los cambios en los requisitos del cliente, lo cual es crucial en un entorno tecnológico en constante evolución.
+
+Las metodologías ágiles, como Scrum y Extreme Programming, han demostrado ser efectivas para fomentar la colaboración entre los equipos de desarrollo y mejorar la comunicación con los stakeholders. Para maximizar estos beneficios, se recomienda que las organizaciones implementen un enfoque estructurado que combine la formación en metodologías ágiles con la adopción de patrones de diseño bien definidos. Esto no solo puede resultar en un ciclo de desarrollo más eficiente, sino que también puede aumentar la satisfacción del cliente al reducir el tiempo de entrega.
+
+Es fundamental que las organizaciones reconozcan los desafíos asociados con la transición hacia un enfoque ágil. Invertir en la capacitación de los equipos y cultivar una cultura organizacional que valore la colaboración y la innovación son pasos esenciales para superar la resistencia al cambio y la falta de comprensión sobre las metodologías ágiles.
+
+De cara al futuro, se sugiere que las investigaciones se centren en la automatización de la detección de patrones de diseño y en el desarrollo de herramientas que faciliten la implementación de metodologías ágiles en diversos contextos organizacionales. Además, sería beneficioso realizar estudios comparativos en diferentes industrias para identificar mejores prácticas y lecciones aprendidas que puedan ser aplicadas en el desarrollo de software.
+
+En resumen, la combinación de patrones de diseño y metodologías ágiles no solo representa una oportunidad significativa para mejorar la calidad del software y la eficiencia del desarrollo, sino que también puede ser un factor determinante para el éxito en un entorno empresarial cada vez más competitivo y dinámico. La implementación efectiva de estas prácticas puede posicionar a las organizaciones para enfrentar los desafíos del futuro con mayor resiliencia y adaptabilidad.
+
+\section{Referencias}
+\begin{enumerate}
+    \item Abanto Cruz, J. A., \& Gonzales Ramírez, O. F. (2019). Análisis comparativo de patrones de diseño de software para el desarrollo de aplicaciones móviles de calidad: Una revisión sistemática de la literatura. Recuperado de \url{https://repositorio.upeu.edu.pe/server/api/core/bitstreams/2107746c-809f-4619-8152-4eb578af9b27/content}
+    \item Blas, M. J., Leone, H., \& Gonnet, S. (2019). Modelado y Verificación de Patrones de Diseño de Arquitectura de Software para Entornos de Computación en Nube. Recuperado de \url{https://ri.conicet.gov.ar/bitstream/handle/11336/125130/CONICET_Digital_Nro.8053e909-ab36-4e05-a990-4d92bb067f45_A.pdf?sequence=2&isAllowed=y}
+    \item Silva Garrido, V. (2022). Análisis comparativo de Patrones de Diseño de Software. Recuperado de \url{https://dialnet.unirioja.es/servlet/articulo?codigo=9042927}
+\end{enumerate}
+\end{itemize}
+
+\end{document}
